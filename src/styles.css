@@ -2,3 +2,7 @@
 html, body {
     height: 100%;
 }
+
+.content-container{
+    padding-top: 71px;
+}
