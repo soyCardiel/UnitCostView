@@ -8,6 +8,9 @@ import { ListComponent } from './components/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectService } from 'src/app/services/project/project.service';
 import { HttpService } from 'src/app/services/http.service';
+import { NgbModule, NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 @NgModule({
@@ -19,11 +22,11 @@ import { HttpService } from 'src/app/services/http.service';
     CommonModule,
     ProjectsRoutingModule,
     GeneralModule,
-    HttpClientModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule
   ],
   providers: [
-    ProjectService,
-    HttpService
   ]
 })
 export class ProjectsModule { }

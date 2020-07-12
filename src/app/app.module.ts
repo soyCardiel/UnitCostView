@@ -3,8 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './modules/pages/home/home.module';
-import { GeneralModule } from './modules/general/general.module';
+
+import { NgxUiLoaderModule} from 'ngx-ui-loader';
+import { ProjectService } from './services/project/project.service';
+import { HttpService } from './services/http.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SessionStorageService } from 'src/app/services/sessionstorage/session-storage.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -13,10 +20,15 @@ import { GeneralModule } from './modules/general/general.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule,
-    GeneralModule
+    NgxUiLoaderModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    ProjectService,
+    HttpService,
+    SessionStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

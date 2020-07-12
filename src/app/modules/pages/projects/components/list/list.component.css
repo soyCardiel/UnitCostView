@@ -1,0 +1,7 @@
+table.table-hover tr{
+    cursor: pointer;
+}
+
+button.btn.btn-intable {
+    padding: 0px 8px;
+}

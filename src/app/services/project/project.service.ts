@@ -8,9 +8,23 @@ import { Observable } from 'rxjs';
 })
 export class ProjectService {
 
-  constructor(private _apiClient: HttpService) { }
+  constructor(private apiClient: HttpService) { }
+
+  private currentSelectedProject: IBasicProject;
 
   getBasicProjectList(): Observable<IBasicProject[]> {
-    return this._apiClient.get('Project/GetBasicProjects');
+    return this.apiClient.get<IBasicProject[]>('Project/GetBasicProjects');
+  }
+
+  createBasicProject(model: IBasicProject): Observable<IBasicProject> {
+    return this.apiClient.post<IBasicProject>('Project/CreateBasicProject', model);
+  }
+
+  getCurrentProject(): IBasicProject {
+    return this.currentSelectedProject;
+  }
+
+  setCurrentProject(model: IBasicProject): void {
+    this.currentSelectedProject = model;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 declare var $: any;
 
 @Component({
@@ -19,25 +19,24 @@ export class SidebarComponent implements OnInit {
     $('#collapse-icon').addClass('fa-angle-double-left');
 
     // Collapse click
-    $('[data-toggle=sidebar-colapse]').click(function () {
+    $('[data-toggle=sidebar-colapse]').click(() => {
       self.sidebarCollapse();
     });
 
-    
   }
 
-  sidebarCollapse() {
+  sidebarCollapse(): void {
     $('.menu-collapsed').toggleClass('d-none');
     $('.sidebar-submenu').toggleClass('d-none');
     $('.submenu-icon').toggleClass('d-none');
     $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
 
     // Treating d-flex/d-none on separators with title
-    var SeparatorTitle = $('.sidebar-separator-title');
-    if (SeparatorTitle.hasClass('d-flex')) {
-      SeparatorTitle.removeClass('d-flex');
+    const separatorTitle = $('.sidebar-separator-title');
+    if (separatorTitle.hasClass('d-flex')) {
+      separatorTitle.removeClass('d-flex');
     } else {
-      SeparatorTitle.addClass('d-flex');
+      separatorTitle.addClass('d-flex');
     }
 
     // Collapse/Expand icon

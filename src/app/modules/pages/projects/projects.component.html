@@ -11,8 +11,12 @@
           Esta lista contiene todos los projectos de costos unitarios que has creado
         </p>
 
+        <div class="table-actions float-right mb-1">
+          <button type="button" class="btn btn-outline-primary" (click)="openProjectModal()"> <i class="fa fa-plus"></i> Agregar proyecto </button>
+        </div>
+
         <div class="project-list-container">
-          <app-list [projects]="projects"></app-list>
+          <app-list [projects]="projects" (rowSelected)="onRowSelected($event)"></app-list>
         </div>
 
     </div>

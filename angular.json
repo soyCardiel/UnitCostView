@@ -24,6 +24,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.material.teal.light.css",
               "node_modules/bootswatch/dist/flatly/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
@@ -32,7 +34,12 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-              
+            ],
+            "allowedCommonJsDependencies": [
+              "devextreme/core/http_request",
+              "devextreme/core/renderer",
+              "devextreme/core/dom_adapter",
+              "devextreme/core/utils/deferred"
             ]
           },
           "configurations": {
@@ -126,6 +133,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "unit-cost-app"
 }
