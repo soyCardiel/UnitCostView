@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { fader } from 'src/app/commons/route-animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [ fader ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'unit-cost-app';
+  title = 'new-view';
 }

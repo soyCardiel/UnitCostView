@@ -1,0 +1,15 @@
+<div class="table-container">
+  <dx-data-grid [dataSource]="projects" [hoverStateEnabled]="true" (onRowClick)="openProject($event)">
+
+    <dxo-search-panel [visible]="true" [width]="300" placeholder="Buscar..."></dxo-search-panel>
+
+    <dxi-column caption="Nombre del proyecto" dataField="name" width="30%"></dxi-column>
+    <dxi-column caption="Descripcion" dataField="description" width="50%"></dxi-column>
+    <dxi-column caption="Acciones" cellTemplate="actions" width="20%" alignment="center"></dxi-column>
+    <div *dxTemplate="let data of 'actions'">
+      <button type="button" class="btn btn-link btn-intable"> <i class="fa fa-pencil"></i> </button>
+      <button type="button" class="btn btn-link btn-intable"> <i class="fa fa-cog"></i> </button>
+    </div>
+  </dx-data-grid>
+
+</div>

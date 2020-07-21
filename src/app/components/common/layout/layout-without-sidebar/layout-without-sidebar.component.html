@@ -1,0 +1,7 @@
+<app-topbar class="layout-header" [menuToggleEnabled]="true" (menuToggle)="menuOpened = !menuOpened;"
+  [title]="appTitle">
+</app-topbar>
+
+<dx-scroll-view height="100%" class="full-height-scrollable">
+  <ng-content></ng-content>
+</dx-scroll-view>

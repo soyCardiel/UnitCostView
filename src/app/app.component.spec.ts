@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'unit-cost-app'`, () => {
+  it(`should have as title 'new-view'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('unit-cost-app');
+    expect(app.title).toEqual('new-view');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('unit-cost-app app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('new-view app is running!');
   });
 });
