@@ -4,6 +4,7 @@ import { ProjectService } from 'src/app/services/projects/project.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BasicProjectFormComponent } from './components/basic-project-form/basic-project-form.component';
 import { Router } from '@angular/router';
+import { CustomModalService } from 'src/app/services/modal/custom-modal.service';
 
 @Component({
   selector: 'app-projects',
@@ -16,8 +17,8 @@ export class ProjectsComponent implements OnInit {
 
   constructor(
     private projectsService: ProjectService,
-    public modalService: NgbModal,
-    private router: Router
+    private router: Router,
+    private modalService: CustomModalService
   ) { }
 
   ngOnInit(): void {
@@ -27,15 +28,24 @@ export class ProjectsComponent implements OnInit {
   }
 
   openProjectModal(): void {
-    const formcompref = this.modalService.open(BasicProjectFormComponent, {keyboard: false, backdrop: 'static', size: 'lg'});
-    formcompref.result.then( formresult => {
-      const basicProjectModel = formresult as IBasicProject;
-      this.projectsService.createBasicProject(basicProjectModel).subscribe( created => {
-        this.projects.push(created);
-      });
-    } , error =>{
-      console.log(error);
-    });
+    // const formcompref = this.modalService.open(BasicProjectFormComponent, {keyboard: false, backdrop: 'static', size: 'lg'});
+    // formcompref.result.then( formresult => {
+    //   const basicProjectModel = formresult as IBasicProject;
+    //   this.projectsService.createBasicProject(basicProjectModel).subscribe( created => {
+    //     this.projects.push(created);
+    //   });
+    // } , error =>{
+    //   console.log(error);
+    // });
+
+    this.modalService.dialog(BasicProjectFormComponent, 'Agregar proyecto nuevo').then(
+      (res) => {
+        console.log(res);
+      },
+      (res) => {
+        console.log(res);
+      }
+    )
 
   }
 

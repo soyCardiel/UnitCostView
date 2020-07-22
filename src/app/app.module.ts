@@ -67,6 +67,8 @@ import { WorkspaceComponent } from 'src/app/components/workspace/workspace.compo
 import { DashboardComponent } from 'src/app/components/workspace/components/dashboard/dashboard.component';
 import { NavigationlistComponent } from 'src/app/components/common/layout/navigationlist/navigationlist.component';
 import { CatalogsComponent } from './components/workspace/components/catalogs/catalogs.component';
+import {CustomModalService} from './services/modal/custom-modal.service';
+import { CustomModalComponent } from './components/common/modal/custom-modal/custom-modal.component';
 
 
 @NgModule({
@@ -84,6 +86,7 @@ import { CatalogsComponent } from './components/workspace/components/catalogs/ca
     DashboardComponent,
     NavigationlistComponent,
     CatalogsComponent,
+    CustomModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -138,6 +141,7 @@ import { CatalogsComponent } from './components/workspace/components/catalogs/ca
     HttpService,
     SessionStorageService,
     ProjectService,
+    CustomModalService
   ],
   bootstrap: [AppComponent]
 })
